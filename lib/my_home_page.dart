@@ -28,11 +28,10 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(widget.title,
+          title: Text(
+            widget.title,
             style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-            fontSize: 24),
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24),
           ),
           /*shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
@@ -57,14 +56,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Text('Ошибка загрузки данных'),
                     );
                   } else {
-                    List<Person> persons=snapshot.data!;
+                    List<Person> persons = snapshot.data!;
                     return ListView.builder(
-
-                      itemCount: persons.length,
-                        itemBuilder: (context,index){
-                          return Card();
-                        }
-                    );
+                        itemCount: persons.length,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            color: Colors.green,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(80),
+                            ),
+                            child: Row(
+                              children: [
+                                CircleAvatar(),
+                              ],
+                            ),
+                          );
+                        });
                   }
                 }
               default:
