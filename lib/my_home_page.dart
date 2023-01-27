@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
               top: Radius.circular(0),
             ),
           ),*/
-        ):AppBar(),
+        ):PreferredSize(child: Container(), preferredSize: Size.fromHeight(0)),
         body: Padding(
           padding: EdgeInsets.all(8),
           child: FutureBuilder(
