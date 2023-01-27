@@ -28,8 +28,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double width=MediaQuery.of(context).size.width;
     return Scaffold(
-        appBar: AppBar(
+        appBar: width>1000?AppBar(
           backgroundColor: Colors.lightBlue,
           centerTitle: true,
           title: Text(
@@ -42,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
               top: Radius.circular(0),
             ),
           ),*/
-        ),
+        ):AppBar(),
         body: Padding(
           padding: EdgeInsets.all(8),
           child: FutureBuilder(

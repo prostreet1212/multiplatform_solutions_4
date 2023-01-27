@@ -15,11 +15,29 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 3,
+      mainAxisSpacing: 10,
+      crossAxisSpacing: 10,
       children: widget.persons
-          .map((e) => Container(
-                width: 25,
-                height: 25,
+          .map((person) => Container(
                 color: Colors.green,
+        child: Column(
+          children: [
+        CircleAvatar(
+        backgroundColor: Color.fromARGB(255, 229, 229, 218),
+        radius: 32,
+        backgroundImage: AssetImage('assets/images/my_photo.jpg'),
+        ),
+            Text(
+              person.name,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, fontSize: 22),
+            ),
+            Text(
+              person.email,
+              style: TextStyle(fontSize: 16),
+            ),
+        ],
+        ),
               ),
       )
           .toList(),
