@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multiplatform_solutions_4/Model/person.dart';
+import 'package:multiplatform_solutions_4/widgets/menu_bottom_sheet.dart';
+import 'package:popover/popover.dart';
 
 class ResizebleCard extends StatelessWidget {
    ResizebleCard({Key? key,required this.person}) : super(key: key);
@@ -9,7 +11,10 @@ class ResizebleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        print('hellow');
+        showPopover(
+          width: MediaQuery.of(context).size.width/2.3,
+            context: context,
+            bodyBuilder: (context)=>MenuBottomSheet(),);
       },
       child: Card(
         shape: RoundedRectangleBorder(

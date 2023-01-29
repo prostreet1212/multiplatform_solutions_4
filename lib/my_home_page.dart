@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     double width=MediaQuery.of(context).size.width;
     return Scaffold(
-        appBar: width>1000?AppBar(
+        appBar: width<700?AppBar(
           backgroundColor: Colors.lightBlue,
           centerTitle: true,
           title: Text(
@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     } else {
                       List<Person> persons = snapshot.data!;
                       //return UserListView(persons: persons);
-                      return ResizebleGridView(persons: persons,);
+                      return width<700?UserListView(persons: persons): ResizebleGridView(persons: persons);
                     }
                   }
                 default:
@@ -75,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
               }
             },
           ),
-        ));
+        ),
+    );
   }
 }
