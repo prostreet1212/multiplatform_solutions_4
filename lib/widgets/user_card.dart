@@ -33,7 +33,7 @@ class UserCard extends StatelessWidget {
               CircleAvatar(
                 backgroundColor: Color.fromARGB(255, 229, 229, 218),
                 radius: 32,
-                backgroundImage: AssetImage('assets/images/my_photo.jpg'),
+                backgroundImage: AssetImage('assets/images/dom.jpg'),
               ),
               SizedBox(
                 width: 16,

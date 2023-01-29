@@ -12,9 +12,13 @@ class ResizebleCard extends StatelessWidget {
     return GestureDetector(
       onTap: (){
         showPopover(
-          width: MediaQuery.of(context).size.width/2.3,
+          arrowDxOffset: 100,
+          direction: PopoverDirection.bottom,
+          transition: PopoverTransition.other,
+          width: MediaQuery.of(context).size.width/2.7,
             context: context,
-            bodyBuilder: (context)=>MenuBottomSheet(),);
+            bodyBuilder: (context)=>MenuBottomSheet(),
+        );
       },
       child: Card(
         shape: RoundedRectangleBorder(
@@ -22,29 +26,33 @@ class ResizebleCard extends StatelessWidget {
         ),
         color: Colors.lightBlueAccent,
         //child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 229, 229, 218),
-              radius: 80,
-              backgroundImage: AssetImage('assets/images/my_photo.jpg'),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              person.name,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
-            ),
-            SizedBox(
-              height: 4,
-            ),
-            Text(
-              person.email,
-              style: TextStyle(fontSize: 16),
-            ),
-          ],
+        child: LayoutBuilder(
+          builder: (context,constraints){
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  backgroundColor: Color.fromARGB(255, 229, 229, 218),
+                  radius: constraints.maxWidth/4,
+                  backgroundImage: AssetImage('assets/images/dom.jpg'),
+                ),
+                SizedBox(
+                  height: constraints.maxWidth/30,
+                ),
+                Text(
+                  person.name,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: constraints.maxWidth/18),
+                ),
+                SizedBox(
+                  height: constraints.maxWidth/50,
+                ),
+                Text(
+                  person.email,
+                  style: TextStyle(fontSize: constraints.maxWidth/22),
+                ),
+              ],
+            );
+          },
         ),
         //),
       ),

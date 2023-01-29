@@ -10,15 +10,40 @@ class ResizebleGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 3,
-      mainAxisSpacing: 10,
-      crossAxisSpacing: 10,
-      children: persons
-          .map(
-            (person) => ResizebleCard(person: person),
-          )
-          .toList(),
+    return Row(
+      children: [
+        Wrap(
+          children: [
+            Container(
+              color: Colors.lightBlue,
+              //width: 45,
+              height: MediaQuery.of(context).size.height,
+              child: Padding(
+                  padding: EdgeInsets.all(8),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Adaptive App',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  )),
+            )
+          ],
+        ),
+        Expanded(
+            child: GridView.count(
+              crossAxisCount: 3,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              children: persons
+                  .map(
+                    (person) => ResizebleCard(person: person),
+                  )
+                  .toList(),
+            ),
+        )
+      ],
     );
   }
 }
