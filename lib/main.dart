@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:multiplatform_solutions_4/second_page.dart';
+import 'package:multiplatform_solutions_4/widgets/resizeble_grid_view.dart';
 
 import 'my_home_page.dart';
 

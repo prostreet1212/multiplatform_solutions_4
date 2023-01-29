@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:multiplatform_solutions_4/second_page.dart';
+import 'package:multiplatform_solutions_4/widgets/resizeble_grid_view.dart';
 import 'package:multiplatform_solutions_4/widgets/menu_bottom_sheet.dart';
 import 'package:multiplatform_solutions_4/widgets/user_list_view.dart';
 
@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     } else {
                       List<Person> persons = snapshot.data!;
                       //return UserListView(persons: persons);
-                      return SecondPage(persons: persons,);
+                      return ResizebleGridView(persons: persons,);
                     }
                   }
                 default:
