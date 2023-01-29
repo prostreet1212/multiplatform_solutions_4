@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:multiplatform_solutions_4/widgets/resizeble_grid_view.dart';
-
 import 'my_home_page.dart';
 
 void main() {
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Adaptive App'),
+      home: const MyHomePage(title: 'Adaptive App'),
     );
   }
 }

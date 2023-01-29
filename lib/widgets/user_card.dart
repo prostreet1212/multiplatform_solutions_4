@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:multiplatform_solutions_4/Model/person.dart';
-
 import 'menu_bottom_sheet.dart';
 
 class UserCard extends StatelessWidget {
-   UserCard({Key? key,required this.user}) : super(key: key);
+   const UserCard({Key? key,required this.user}) : super(key: key);
 
-  Person user;
+  final Person user;
+
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+
       onTap: () {
+
         showModalBottomSheet(
           isScrollControlled: true,
           backgroundColor: Colors.transparent,
           context: context,
-          builder: (context) => MenuBottomSheet(),
+          builder: (context) => const MenuBottomSheet(),
         );
       },
       child: Card(
@@ -25,17 +27,17 @@ class UserCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Row(
             //mainAxisAlignment: MainAxisAlignment.center
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundColor: Color.fromARGB(255, 229, 229, 218),
                 radius: 32,
                 backgroundImage: AssetImage('assets/images/dom.jpg'),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 16,
               ),
               Column(
@@ -44,12 +46,12 @@ class UserCard extends StatelessWidget {
                 children: [
                   Text(
                     user.name,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 22),
                   ),
                   Text(
                     user.email,
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ],
               )

@@ -4,9 +4,9 @@ import 'package:multiplatform_solutions_4/widgets/resizeble_card.dart';
 import '../Model/person.dart';
 
 class ResizebleGridView extends StatelessWidget {
-  ResizebleGridView({Key? key, required this.persons}) : super(key: key);
+ const ResizebleGridView({Key? key, required this.persons}) : super(key: key);
 
-  List<Person> persons;
+ final List<Person> persons;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,9 @@ class ResizebleGridView extends StatelessWidget {
               //width: 45,
               height: MediaQuery.of(context).size.height,
               child: Padding(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   child: Column(
-                    children: [
+                    children: const [
                       Text(
                         'Adaptive App',
                         style: TextStyle(fontWeight: FontWeight.bold),

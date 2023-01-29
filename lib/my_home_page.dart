@@ -1,10 +1,7 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:multiplatform_solutions_4/widgets/resizeble_grid_view.dart';
-import 'package:multiplatform_solutions_4/widgets/menu_bottom_sheet.dart';
 import 'package:multiplatform_solutions_4/widgets/user_list_view.dart';
-
 import 'Model/person.dart';
 import 'utils/utils.dart';
 
@@ -28,54 +25,63 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double width=MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
-        appBar: width<700?AppBar(
-          backgroundColor: Colors.lightBlue,
-          centerTitle: true,
-          title: Text(
-            widget.title,
-            style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24),
-          ),
-          /*shape: RoundedRectangleBorder(
+      appBar: width < 700
+          ? AppBar(
+              backgroundColor: Colors.lightBlue,
+              centerTitle: true,
+              title: Text(
+                widget.title,
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24),
+              ),
+              /*shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(0),
             ),
           ),*/
-        ):PreferredSize(child: Container(), preferredSize: Size.fromHeight(0)),
-        body: Padding(
-          padding: EdgeInsets.all(8),
-          child: FutureBuilder(
-            future: getPersons(),
-            builder: (context, snapshot) {
-              switch (snapshot.connectionState) {
-                case ConnectionState.waiting:
-                  {
-                    return Center(
-                      child: CircularProgressIndicator(),
+            )
+          : PreferredSize(
+              preferredSize: const Size.fromHeight(0),
+              child: Container(),
+            ),
+      body: Padding(
+        padding: const EdgeInsets.all(8),
+        child: FutureBuilder(
+          future: getPersons(),
+          builder: (context, snapshot) {
+            switch (snapshot.connectionState) {
+              case ConnectionState.waiting:
+                {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              case ConnectionState.done:
+                {
+                  if (snapshot.hasError) {
+                    return const Center(
+                      child: Text('Ошибка загрузки данных'),
                     );
+                  } else {
+                    List<Person> persons = snapshot.data!;
+                    //return UserListView(persons: persons);
+                    return width < 700
+                        ? UserListView(persons: persons)
+                        : ResizebleGridView(persons: persons);
                   }
-                case ConnectionState.done:
-                  {
-                    if (snapshot.hasError) {
-                      return Center(
-                        child: Text('Ошибка загрузки данных'),
-                      );
-                    } else {
-                      List<Person> persons = snapshot.data!;
-                      //return UserListView(persons: persons);
-                      return width<700?UserListView(persons: persons): ResizebleGridView(persons: persons);
-                    }
-                  }
-                default:
-                  {
-                    return Container();
-                  }
-              }
-            },
-          ),
+                }
+              default:
+                {
+                  return Container();
+                }
+            }
+          },
         ),
+      ),
     );
   }
 }

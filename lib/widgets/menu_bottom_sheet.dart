@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 
 class MenuBottomSheet extends StatelessWidget {
-  const MenuBottomSheet({Key? key}) : super(key: key);
+   const MenuBottomSheet({Key? key}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: new BoxDecoration(
+      decoration:  const BoxDecoration(
         color: Colors.white,
-        borderRadius: new BorderRadius.only(
-          topLeft: const Radius.circular(20.0),
-          topRight: const Radius.circular(20.0),
+        borderRadius:  BorderRadius.only(
+          topLeft:  Radius.circular(20.0),
+          topRight:  Radius.circular(20.0),
         ),
       ),
       child: Wrap(
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 16, bottom: 16),
+            padding: const EdgeInsets.only(top: 16, bottom: 16),
             child: Column(
               children: [
                 ElevatedButton(
@@ -24,8 +26,8 @@ class MenuBottomSheet extends StatelessWidget {
                     backgroundColor: Colors.white,
                   ),
                   onPressed: () => Navigator.pop(context),
-                  child: Row(
-                    children: [
+                  child:  Row(
+                    children: const [
                       Icon(
                         Icons.person,
                         size: 60,
@@ -45,7 +47,7 @@ class MenuBottomSheet extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 5, left: 5),
+                  padding: const EdgeInsets.only(right: 5, left: 5),
                   child: Container(
                     height: 3,
                     color: Colors.black,
@@ -56,7 +58,7 @@ class MenuBottomSheet extends StatelessWidget {
                       ElevatedButton.styleFrom(backgroundColor: Colors.white),
                   onPressed: () => Navigator.pop(context),
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.group,
                         size: 60,
@@ -74,7 +76,7 @@ class MenuBottomSheet extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 5, left: 5),
+                  padding: const EdgeInsets.only(right: 5, left: 5),
                   child: Container(
                     height: 3,
                     color: Colors.black,
@@ -87,7 +89,7 @@ class MenuBottomSheet extends StatelessWidget {
                     ),
                     onPressed: () => Navigator.pop(context),
                     child: Row(
-                      children: [
+                      children: const [
                         Icon(
                           Icons.add_chart_outlined,
                           size: 60,
@@ -98,7 +100,7 @@ class MenuBottomSheet extends StatelessWidget {
                         ),
                         Text(
                           'ОТЧЕТ',
-                          style: TextStyle(
+                          style:  TextStyle(
                               fontSize: 36,
                               fontWeight: FontWeight.bold,
                               color: Colors.black),

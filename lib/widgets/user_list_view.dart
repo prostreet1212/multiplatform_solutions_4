@@ -4,8 +4,8 @@ import '../Model/person.dart';
 
 
 class UserListView extends StatelessWidget {
-  UserListView({Key? key, required this.persons}) : super(key: key);
-  List<Person> persons;
+  const UserListView({Key? key, required this.persons}) : super(key: key);
+  final List<Person> persons;
 
   @override
   Widget build(BuildContext context) {
