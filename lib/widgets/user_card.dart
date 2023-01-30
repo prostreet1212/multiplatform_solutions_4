@@ -3,17 +3,14 @@ import 'package:multiplatform_solutions_4/Model/person.dart';
 import 'menu_bottom_sheet.dart';
 
 class UserCard extends StatelessWidget {
-   const UserCard({Key? key,required this.user}) : super(key: key);
+  const UserCard({Key? key, required this.user}) : super(key: key);
 
   final Person user;
-
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-
       onTap: () {
-
         showModalBottomSheet(
           isScrollControlled: true,
           backgroundColor: Colors.transparent,

@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 
 class MenuBottomSheet extends StatelessWidget {
-   const MenuBottomSheet({Key? key}) : super(key: key);
-
-
+  const MenuBottomSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration:  const BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
-        borderRadius:  BorderRadius.only(
-          topLeft:  Radius.circular(20.0),
-          topRight:  Radius.circular(20.0),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20.0),
+          topRight: Radius.circular(20.0),
         ),
       ),
       child: Wrap(
@@ -26,7 +24,7 @@ class MenuBottomSheet extends StatelessWidget {
                     backgroundColor: Colors.white,
                   ),
                   onPressed: () => Navigator.pop(context),
-                  child:  Row(
+                  child: Row(
                     children: const [
                       Icon(
                         Icons.person,
@@ -70,7 +68,9 @@ class MenuBottomSheet extends StatelessWidget {
                       Text(
                         'ДРУЗЬЯ',
                         style: TextStyle(
-                            fontSize: 36, fontWeight: FontWeight.bold,color: Colors.black),
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
                       ),
                     ],
                   ),
@@ -100,7 +100,7 @@ class MenuBottomSheet extends StatelessWidget {
                         ),
                         Text(
                           'ОТЧЕТ',
-                          style:  TextStyle(
+                          style: TextStyle(
                               fontSize: 36,
                               fontWeight: FontWeight.bold,
                               color: Colors.black),

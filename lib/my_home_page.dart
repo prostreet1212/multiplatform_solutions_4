@@ -38,11 +38,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontWeight: FontWeight.bold,
                     fontSize: 24),
               ),
-              /*shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(0),
-            ),
-          ),*/
             )
           : PreferredSize(
               preferredSize: const Size.fromHeight(0),

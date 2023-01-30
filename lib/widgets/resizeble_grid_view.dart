@@ -4,9 +4,9 @@ import 'package:multiplatform_solutions_4/widgets/resizeble_card.dart';
 import '../Model/person.dart';
 
 class ResizebleGridView extends StatelessWidget {
- const ResizebleGridView({Key? key, required this.persons}) : super(key: key);
+  const ResizebleGridView({Key? key, required this.persons}) : super(key: key);
 
- final List<Person> persons;
+  final List<Person> persons;
 
   @override
   Widget build(BuildContext context) {
@@ -32,16 +32,16 @@ class ResizebleGridView extends StatelessWidget {
           ],
         ),
         Expanded(
-            child: GridView.count(
-              crossAxisCount: 3,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
-              children: persons
-                  .map(
-                    (person) => ResizebleCard(person: person),
-                  )
-                  .toList(),
-            ),
+          child: GridView.count(
+            crossAxisCount: 3,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            children: persons
+                .map(
+                  (person) => ResizebleCard(person: person),
+                )
+                .toList(),
+          ),
         )
       ],
     );

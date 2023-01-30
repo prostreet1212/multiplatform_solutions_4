@@ -32,8 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   popover: ^0.2.8
-  shape_of_view_null_safe: ^2.0.0
-  super_tooltip: ^1.0.1
+
 
 
   # The following adds the Cupertino Icons font to your application.
