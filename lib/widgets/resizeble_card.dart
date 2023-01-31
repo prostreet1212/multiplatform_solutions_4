@@ -16,10 +16,11 @@ class ResizebleCard extends StatelessWidget {
           transition: PopoverTransition.scale,
           width: MediaQuery.of(context).size.width / 3.1,
           context: context,
-          bodyBuilder: (context) =>
-              LayoutBuilder(builder: (context, constraints) {
-            return const MenuBottomSheet();
-          }),
+          bodyBuilder: (context) => LayoutBuilder(
+            builder: (context, constraints) {
+              return const MenuBottomSheet();
+            },
+          ),
         );
       },
       child: Card(
@@ -27,7 +28,6 @@ class ResizebleCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         color: Colors.lightBlueAccent,
-        //child: Center(
         child: LayoutBuilder(
           builder: (context, constraints) {
             return Column(
@@ -58,7 +58,6 @@ class ResizebleCard extends StatelessWidget {
             );
           },
         ),
-        //),
       ),
     );
   }
