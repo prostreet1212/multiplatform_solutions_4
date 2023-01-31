@@ -14,7 +14,7 @@ class ResizebleCard extends StatelessWidget {
       onTap: () {
         showPopover(
           transition: PopoverTransition.scale,
-          width: MediaQuery.of(context).size.width / 3.3,
+          width: MediaQuery.of(context).size.width / 3.1,
           context: context,
           bodyBuilder: (context) =>
               LayoutBuilder(builder: (context, constraints) {
