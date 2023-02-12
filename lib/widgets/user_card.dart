@@ -26,7 +26,6 @@ class UserCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Row(
-            //mainAxisAlignment: MainAxisAlignment.center
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const CircleAvatar(
@@ -39,7 +38,6 @@ class UserCard extends StatelessWidget {
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                //mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
                     user.name,

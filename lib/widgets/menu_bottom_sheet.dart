@@ -83,44 +83,31 @@ class MenuBottomSheet extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      minimumSize: const Size.fromHeight(50), // NEW
-                    ),
-                    onPressed: () => Navigator.pop(context),
-                    child: Row(
-                      children: const [
-                        Icon(
-                          Icons.add_chart_outlined,
-                          size: 60,
-                          color: Colors.black54,
-                        ),
-                        SizedBox(
-                          width: 16,
-                        ),
-                        Text(
-                          'ОТЧЕТ',
-                          style: TextStyle(
-                              fontSize: 36,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black),
-                        ),
-                      ],
-                    )
-                    /*ListTile(
-                                                            leading: Icon(
-                                                              Icons.add_chart_outlined,
-                                                              size: 60,
-                                                            ),
-                                                            title: Text(
-                                                              'ОТЧЕТ',
-                                                              style: TextStyle(
-                                                                  fontSize: 36,
-                                                                  fontWeight:
-                                                                  FontWeight.bold),
-                                                            ),
-                                                          ),*/
-                    ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    minimumSize: const Size.fromHeight(50), // NEW
+                  ),
+                  onPressed: () => Navigator.pop(context),
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.add_chart_outlined,
+                        size: 60,
+                        color: Colors.black54,
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Text(
+                        'ОТЧЕТ',
+                        style: TextStyle(
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

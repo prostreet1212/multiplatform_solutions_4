@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:multiplatform_solutions_4/widgets/resizeble_card.dart';
-
 import '../Model/person.dart';
 
 class ResizebleGridView extends StatelessWidget {
@@ -16,18 +15,18 @@ class ResizebleGridView extends StatelessWidget {
           children: [
             Container(
               color: Colors.lightBlue,
-              //width: 45,
               height: MediaQuery.of(context).size.height,
               child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Column(
-                    children: const [
-                      Text(
-                        'Adaptive App',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  )),
+                padding: const EdgeInsets.all(8),
+                child: Column(
+                  children: const [
+                    Text(
+                      'Adaptive App',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
             )
           ],
         ),

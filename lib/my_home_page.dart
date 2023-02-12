@@ -15,12 +15,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  late Future<List<Person>> persons;
+
   Future<List<Person>> getPersons() async {
     List<Person> personList = [];
     String result = await fetchFileFromAssets('assets/persons.json');
     List<dynamic> persons = jsonDecode(result);
     personList = persons.map((e) => Person.fromJson(e)).toList();
     return personList;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    persons=getPersons();
+
   }
 
   @override
@@ -46,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: FutureBuilder(
-          future: getPersons(),
+          future: persons,
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.waiting:
@@ -63,7 +73,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   } else {
                     List<Person> persons = snapshot.data!;
-                    //return UserListView(persons: persons);
                     return width < 700
                         ? UserListView(persons: persons)
                         : ResizebleGridView(persons: persons);
